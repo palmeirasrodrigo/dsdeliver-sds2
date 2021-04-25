@@ -27,7 +27,7 @@ function OrderLocation({ onChangeLocation }: Props) {
     position: initialPosition
   });
 
-  const loadOptions = async (inputValue: string, callback: (places: Place[]) => void) => {
+  const loadOptions = async (inputValue: string, callback: (places: Place[]) => void): Promise<any> => {
     const response = await fetchLocalMapBox(inputValue);
 
     const places = response.data.features.map((item: any) => {
